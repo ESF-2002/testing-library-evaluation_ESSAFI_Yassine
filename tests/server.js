@@ -16,9 +16,7 @@ export const handlers = [
     }
     return res(ctx.json({data: req.body}))
   }),
-  // New handler for form submission
   rest.post('/form', (req, res, ctx) => {
-    // Check if food or drink fields are empty
     if (!req.body.food || !req.body.drink) {
       return res(
         ctx.status(400),
@@ -27,7 +25,6 @@ export const handlers = [
         }),
       )
     }
-    // Return success response if all fields are filled
     return res(ctx.json({success: true}))
   }),
 ]
